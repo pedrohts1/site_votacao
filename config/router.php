@@ -44,6 +44,12 @@ class Router {
             'controller' => 'VotacaoController',
             'action' => 'delete'
         ];
+        
+        // Rotas para estatísticas
+        $this->routes['/stats'] = [
+            'controller' => 'StatsController',
+            'action' => 'index'
+        ];
     }
     
     public function run() {

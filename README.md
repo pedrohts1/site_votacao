@@ -14,13 +14,18 @@ Desenvolver um sistema de votação online simples e funcional seguindo os padr�
 - Padrão Service (Regras de Negócio)
 
 ## Funcionalidades
-- ✅ CRUD completo de votações
-- ✅ Validação de dados
-- ✅ Controle de votos duplicados
-- ✅ Resultados em tempo real
-- ✅ Interface administrativa
-- ✅ Arquitetura MVC
-- ✅ Conexão com banco MySQL
+- ✅ **CRUD completo** de votações
+- ✅ **Validação de dados** robusta
+- ✅ **Controle de votos duplicados**
+- ✅ **Resultados em tempo real** com gráficos
+- ✅ **Sistema de busca** avançado
+- ✅ **Estatísticas detalhadas** e relatórios
+- ✅ **Interface administrativa** completa
+- ✅ **Design responsivo** e moderno
+- ✅ **Animações** e transições suaves
+- ✅ **Arquitetura MVC** completa
+- ✅ **Padrões DAO e Service**
+- ✅ **Conexão MySQL** robusta
 
 ## Instalação
 
@@ -55,5 +60,31 @@ site_votacao/
 ```
 
 ## Desenvolvedores
-- Pedro Teles (pedrohts1@hotmail.com)
-- [Nome do Parceiro]
+- **Pedro Teles** (pedrohts1@hotmail.com)
+- **Arthur Morel** (arthurmorel2003@outlook.com)
+
+## Características Técnicas
+- **Arquitetura:** MVC (Model-View-Controller)
+- **Padrões:** DAO (Data Access Object) e Service
+- **Banco de Dados:** MySQL com PDO
+- **Frontend:** HTML5, CSS3, JavaScript ES6
+- **Design:** Responsivo com animações CSS
+- **Segurança:** Validação de dados e sanitização
+- **Performance:** Otimizado para carregamento rápido
+
+## Estrutura do Projeto
+```
+site_votacao/
+├── config/          # Configurações e banco
+├── models/          # Entidades (Model)
+├── views/           # Interface (View)
+├── controllers/     # Controladores (Controller)
+├── dao/            # Acesso a dados (DAO)
+├── services/       # Regras de negócio (Service)
+├── assets/         # CSS, JS e recursos
+│   ├── css/        # Estilos modernos
+│   └── js/         # JavaScript interativo
+├── database.sql    # Script do banco
+├── install.php     # Página de instalação
+└── setup_database.php # Configuração automática
+```

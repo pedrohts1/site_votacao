@@ -135,6 +135,34 @@ class VotacaoDAO {
         $count = $stmt->fetchColumn();
         return $count > 0;
     }
+    
+    // Buscar votações por nome ou email
+    public function buscar($termo) {
+        $query = "SELECT * FROM " . $this->table_name . " 
+                  WHERE votante_nome LIKE :termo 
+                  OR votante_email LIKE :termo 
+                  OR opcao LIKE :termo
+                  ORDER BY data_voto DESC";
+        
+        $stmt = $this->conn->prepare($query);
+        $termo = "%" . $termo . "%";
+        $stmt->bindParam(':termo', $termo);
+        $stmt->execute();
+        
+        $votacoes = array();
+        
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $votacao = new Votacao();
+            $votacao->setId($row['id']);
+            $votacao->setOpcao($row['opcao']);
+            $votacao->setVotanteNome($row['votante_nome']);
+            $votacao->setVotanteEmail($row['votante_email']);
+            $votacao->setDataVoto($row['data_voto']);
+            $votacoes[] = $votacao;
+        }
+        
+        return $votacoes;
+    }
 }
 ?>
 

@@ -107,6 +107,15 @@ class VotacaoService {
             'total' => $total
         );
     }
+    
+    // Buscar votações
+    public function buscarVotacoes($termo) {
+        if (empty(trim($termo))) {
+            return $this->obterTodasVotacoes();
+        }
+        
+        return $this->votacaoDAO->buscar($termo);
+    }
 }
 ?>
 

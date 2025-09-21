@@ -20,6 +20,27 @@
             <h3>DAO e Service</h3>
             <p>Camadas de acesso a dados e regras de negócio</p>
         </div>
+        <div class="feature">
+            <h3>Banco MySQL</h3>
+            <p>Conexão robusta com banco de dados</p>
+        </div>
+        <div class="feature">
+            <h3>Estatísticas</h3>
+            <p>Relatórios e análises em tempo real</p>
+        </div>
+        <div class="feature">
+            <h3>Validações</h3>
+            <p>Controle de dados e votos duplicados</p>
+        </div>
+    </div>
+    
+    <div class="quick-actions">
+        <h2>Acesso Rápido</h2>
+        <div class="action-buttons">
+            <a href="/site_votacao/votacao" class="btn btn-primary">Gerenciar Votações</a>
+            <a href="/site_votacao/stats" class="btn btn-secondary">Ver Estatísticas</a>
+            <a href="/site_votacao/install.php" class="btn btn-outline">Verificar Sistema</a>
+        </div>
     </div>
 </div>
 

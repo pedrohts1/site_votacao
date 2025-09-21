@@ -9,12 +9,14 @@ class VotacaoController {
     
     // READ - Listar todas as votações
     public function index() {
-        $votacoes = $this->votacaoService->obterTodasVotacoes();
+        $termo = $_GET['busca'] ?? '';
+        $votacoes = $this->votacaoService->buscarVotacoes($termo);
         $resultados = $this->votacaoService->obterResultados();
         
         $this->render('votacao/index', array(
             'votacoes' => $votacoes,
-            'resultados' => $resultados
+            'resultados' => $resultados,
+            'termo' => $termo
         ));
     }
     

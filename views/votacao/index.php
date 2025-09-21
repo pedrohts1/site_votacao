@@ -7,6 +7,17 @@
         <a href="/site_votacao/votacao/create" class="btn btn-primary">Nova Votação</a>
     </div>
     
+    <div class="search-section">
+        <form method="GET" action="/site_votacao/votacao" class="search-form">
+            <input type="text" name="busca" placeholder="Buscar por nome, email ou opção..." 
+                   value="<?php echo htmlspecialchars($termo); ?>" class="search-input">
+            <button type="submit" class="btn btn-secondary">Buscar</button>
+            <?php if (!empty($termo)): ?>
+                <a href="/site_votacao/votacao" class="btn btn-outline">Limpar</a>
+            <?php endif; ?>
+        </form>
+    </div>
+    
     <div class="results-section">
         <h2>Resultados Atuais</h2>
         <?php if ($resultados['total'] > 0): ?>
