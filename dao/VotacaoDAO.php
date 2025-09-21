@@ -7,6 +7,10 @@ class VotacaoDAO {
     public function __construct() {
         $database = new Database();
         $this->conn = $database->getConnection();
+        
+        if (!$this->conn) {
+            throw new Exception("Não foi possível conectar ao banco de dados");
+        }
     }
     
     // CREATE - Criar nova votação
