@@ -1,15 +1,14 @@
 <?php
-// Arquivo principal - ponto de entrada da aplicação
-session_start();
+include "generic/Autoload.php";
 
-// Incluir configurações
-require_once 'config/database.php';
-require_once 'config/autoload.php';
+// Carrega o Composer (necessário para a biblioteca JWT)
+if (file_exists('vendor/autoload.php')) {
+    require 'vendor/autoload.php';
+}
 
-// Incluir o roteador
-require_once 'config/router.php';
+use generic\Controller;
 
-// Inicializar a aplicação
-$router = new Router();
-$router->run();
+$controller = new Controller();
+$parametro = (isset($_GET["param"]) && !empty($_GET["param"])) ? $_GET["param"] : "home";
+$controller->verificarChamadas($parametro);
 ?>
